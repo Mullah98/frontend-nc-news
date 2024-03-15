@@ -23,6 +23,24 @@ nav {
 
 }
 
+.header-img {
+  height: 100px;
+  width: 70px;
+  display: block;
+  margin: 0 auto;
+}
+
+.header-text {
+  font-size: 70px;
+  border: 10px solid black;
+  border-right: 0;
+  border-left: 0;
+}
+
+.header-text2 {
+  text-align: center;
+}
+
 body {
   margin: 0;
   display: flex;  
@@ -53,13 +71,13 @@ a:active {
 
 .home {
   font-size: xxx-large;
-  background-color: grey;
-  width: 600px;
+  /* background-color: grey; */
+  /* width: 600px; */
   text-align: center;
-  padding: 100px;
-  height: 400px;
+  /* padding: 100px; */
+  /* height: 400px; */
   border-radius: 50%;
-  margin-top: 300px;
+  margin-top: 20px;
 }
 
 .articles {
@@ -195,3 +213,9 @@ a:active {
   margin-top: 40px;
 }
 
+.add-comment {
+  margin-top: 50px;
+  margin-left: 5px;
+  padding: 10px;
+  width: 300px;
+}

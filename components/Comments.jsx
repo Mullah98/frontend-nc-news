@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { fetchArticleCommentsById } from "../Api"
 import { useParams } from 'react-router-dom'
 import CommentsCard from "./CommentsCard"
+import CommentAdder from "./CommentAdder"
 
 export default function Comments () {
     const [singleComment, setSingleComment] = useState({})
@@ -23,10 +24,12 @@ export default function Comments () {
     }
 
     return (
+        <>
         <div className="comments-card">
         {singleComment.map(comment => {
             return <CommentsCard key={comment.comment_id} comment={comment}/>
         })}
         </div>
+        </>
     )
 }

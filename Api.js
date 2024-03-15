@@ -31,6 +31,12 @@ export function patchArticleById(article_id, vote) {
     }))
 }
 
+export function postArticleCommentById(articles_id, postBody) {
+    return marketPlaceAPI.post(`/articles/${articles_id}/comments`, postBody).then(res => {
+        return res.data
+    })
+}
+
 // export function fetchTopics(topic_name) {
 //     return marketPlaceAPI.get("/topics", {params: {topic_name}})
 // }
