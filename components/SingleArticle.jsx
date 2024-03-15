@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { fetchArticleCommentsById, fetchArticleId, patchArticleById } from "../Api";
 import { Link } from 'react-router-dom'
 import CommentsCard from "./CommentsCard";
+import CommentAdder from "./CommentAdder";
 // import image from '../src/loading-img.gif'
 
 export default function SingleArticle () {
@@ -10,8 +11,11 @@ export default function SingleArticle () {
     const [comments, setComments] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [showComments, setShowComments] = useState(false)
-    // const [votes, setVotes] = useState() 
     const {article_id} = useParams()
+
+    const handleCommentState = (newState) => {
+        setComments(newState)
+    }
 
     useEffect(() => {
         fetchArticleId(article_id)
@@ -25,11 +29,10 @@ export default function SingleArticle () {
         })
     }, [article_id])
 
-    const handleVote = (vote) => { //Working on this one
+    const handleVote = (vote) => {
         patchArticleById(article_id, vote).then(({article}) => {
-            console.log(article);
             setSingleArticle(article)
-        })
+        }).catch(error => alert('Unable to vote', error))
     }
 
 
@@ -55,10 +58,11 @@ export default function SingleArticle () {
             <button className="vote-btn" onClick={() => handleVote(1)}>Very good</button>
             <button className="vote-btn" onClick={() => handleVote(-1)}>Very bad</button>
 
+            <CommentAdder handleCommentState={handleCommentState}/>  
+
             <button className="comment-btn" onClick={handleShowComments}>
                 {!showComments ? 'Click me to see comments!' : 'Click me to hide comments!'}
             </button>
-        
         </div>
 
         {showComments && (
