@@ -28,11 +28,11 @@ export default function CommentAdder({handleCommentState}) {
             })
             .catch(() => { alert('Something went wrong')})
         }}>
-            <label htmlFor="article-comment">Add a new comment: </label>
-            <textarea required onChange={(e) => handleChanges(e)} type='text' value={newComment} 
+            <label className="article-comment" htmlFor="article-comment">Add a new comment: </label>
+            <textarea className='comment-area' required onChange={(e) => handleChanges(e)} type='text' value={newComment} 
             name='comment' id='comment' 
             disabled={!loggedInUser.username}></textarea>
-            <button>Add</button>
+            <button className='add-btn'>Add</button>
         </form>
     )
 } 

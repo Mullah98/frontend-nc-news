@@ -53,10 +53,12 @@ export default function SingleArticle () {
             <img src={singleArticle.article_img_url}></img>
             <h3 className="author">Author: {singleArticle.author}</h3>
             <h3 className="description">{singleArticle.body}</h3>
-            <h3>Article votes: {singleArticle.votes}</h3>
+            <h3>Article votes: {singleArticle.votes}
 
-            <button className="vote-btn" onClick={() => handleVote(1)}>Very good</button>
-            <button className="vote-btn" onClick={() => handleVote(-1)}>Very bad</button>
+            <button className="vote-btn" onClick={() => handleVote(1)}>👍</button>
+            <button className="vote-btn" onClick={() => handleVote(-1)}>👎</button>
+
+            </h3>
 
             <CommentAdder handleCommentState={handleCommentState}/>  
 

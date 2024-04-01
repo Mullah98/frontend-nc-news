@@ -71,11 +71,7 @@ a:active {
 
 .home {
   font-size: xxx-large;
-  /* background-color: grey; */
-  /* width: 600px; */
   text-align: center;
-  /* padding: 100px; */
-  /* height: 400px; */
   border-radius: 50%;
   margin-top: 20px;
 }
@@ -168,9 +164,16 @@ a:active {
 .comment-btn {
   color: rgb(49, 24, 24);
   position: relative;
+  border-radius: 20px;
   padding: 20px;
   margin-left: 200px;
+  margin-top: 34px;
   font-size: large;
+}
+
+.comment-btn:hover {
+  background-color: rgb(93, 110, 93);
+  color: white;
 }
 
 .comments-title {
@@ -220,8 +223,42 @@ a:active {
   width: 300px;
 }
 
+.article-comment {
+  font-weight: bold;
+}
+
+.comment-area {
+  background-color: white;
+  width: 300px;
+  height: 50px;
+}
+
+.add-btn {
+  position: relative;
+  height: 55px;
+  padding: 20px;
+  bottom: 20px;
+}
+
+.add-btn:hover {
+  background-color: rgb(93, 110, 93);
+  color: white;
+}
+
+.vote-btn {
+  font-size: xx-large;
+  margin-right: 5px;
+  margin-left: 10px;
+  border-radius: 20px;
+  border:solid 2px rgb(93, 110, 93);
+  transition: transform 0.2s ;
+}
+
+.vote-btn:hover {
+  transform: scale(1.1);
+}
+
 .delete-btn {
   padding: 10px;
   font-size: xx-large;
-  
 }
