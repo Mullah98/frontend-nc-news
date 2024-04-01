@@ -1,3 +1,5 @@
+import DeleteComment from "./DeleteComment"
+
 export default function CommentsCard(comment) {
     
     let emoji = ''
@@ -14,6 +16,7 @@ export default function CommentsCard(comment) {
             <h2 className="comment-body">"{comment.comment.body}"</h2>
             <h2 className="comment-date">Comment created: {comment.comment.created_at}</h2>
             <h2 className="comment-vote">{emoji} {comment.comment.votes} votes</h2>
+        <DeleteComment />
         </div>
     )
 }

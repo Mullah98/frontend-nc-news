@@ -219,3 +219,9 @@ a:active {
   padding: 10px;
   width: 300px;
 }
+
+.delete-btn {
+  padding: 10px;
+  font-size: xx-large;
+  
+}
