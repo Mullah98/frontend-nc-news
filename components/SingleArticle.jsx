@@ -4,13 +4,14 @@ import { fetchArticleCommentsById, fetchArticleId, patchArticleById } from "../A
 import { Link } from 'react-router-dom'
 import CommentsCard from "./CommentsCard";
 import CommentAdder from "./CommentAdder";
-// import image from '../src/loading-img.gif'
+
 
 export default function SingleArticle () {
     const [singleArticle, setSingleArticle] = useState({})
     const [comments, setComments] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [showComments, setShowComments] = useState(false)
+    const [commentDeleted, setCommentDeleted] = useState(false)
     const {article_id} = useParams()
 
     const handleCommentState = (newState) => {
@@ -35,6 +36,14 @@ export default function SingleArticle () {
         }).catch(error => alert('Unable to vote', error))
     }
 
+    const handleDeleteComment = () => {
+        fetchArticleCommentsById(article_id)
+        .then(articleComments => {
+            setComments(articleComments)
+            setCommentDeleted(true)
+            setTimeout(() => setCommentDeleted(false), 3000)
+        })
+    }  
 
     const handleShowComments = () => {
         setShowComments(!showComments)
@@ -69,11 +78,13 @@ export default function SingleArticle () {
 
         {showComments && (
         <div className="comments-card">
+        {commentDeleted && <div className="comment-deleted">Comment deleted!</div>}
         {comments.map(comment => {
-            return <CommentsCard key={comment.comment_id} comment={comment}/>
+            return <CommentsCard key={comment.comment_id} comment={comment} onDelete={handleDeleteComment} />
         })}
         </div>
         )}
+
         </>
     )
 }

@@ -18,9 +18,10 @@
 nav {
   font-size: xx-large;
   border: 2px solid black;
-  width: auto;
+  width: 80%;
   padding: 1rem;
-
+  text-align: center;
+  margin: 0 auto;
 }
 
 .header-img {
@@ -35,6 +36,7 @@ nav {
   border: 10px solid black;
   border-right: 0;
   border-left: 0;
+  text-align: center;
 }
 
 .header-text2 {
@@ -55,6 +57,7 @@ h1 {
 
 a {
   text-decoration:solid;
+  padding-right: 10px;
 }
 
 a:link {
@@ -69,14 +72,66 @@ a:active {
   color: black;
 }
 
-.home {
+.rainbow {
+  animation: rainbow-bg 10s linear;
+  animation-iteration-count: infinite;
+  border-radius: 10%;
+  margin-top: 30px;
+  padding-top: 1%;
+  padding-bottom: 50px;
+}
+
+.home {  
   font-size: xxx-large;
   text-align: center;
-  border-radius: 50%;
-  margin-top: 20px;
+  /* border-radius: 10%; */
+  /* border: 5px solid ; */
+  padding: 10px;
+  background-color: white;
+  margin-top: 50px;
+}
+
+@keyframes rainbow-bg{
+		100%,0%{
+			background-color: rgb(255,0,0);
+		}
+		8%{
+			background-color: rgb(255,127,0);
+		}
+		16%{
+			background-color: rgb(255,255,0);
+		}
+		25%{
+			background-color: rgb(127,255,0);
+		}
+		33%{
+			background-color: rgb(0,255,0);
+		}
+		41%{
+			background-color: rgb(0,255,127);
+		}
+		50%{
+			background-color: rgb(0,255,255);
+		}
+		58%{
+			background-color: rgb(0,127,255);
+		}
+		66%{
+			background-color: rgb(0,0,255);
+		}
+		75%{
+			background-color: rgb(127,0,255);
+		}
+		83%{
+			background-color: rgb(255,0,255);
+		}
+		91%{
+			background-color: rgb(255,0,127);
+		}
 }
 
 .articles {
+  max-width: 100%;
   margin-top: 20px;
   padding: 0;
   display: flex;
@@ -94,7 +149,6 @@ a:active {
   border: 2px solid black;
   border-radius: 25px;
   margin-bottom: 20px;
-  display: flex;
   flex-direction: column;
   align-items: center;
   transition: transform 0.2s ease-in-out;
@@ -108,10 +162,8 @@ a:active {
 .article-title img {
   position: relative;
   width: 100%;
-  height: 50%;
   border: 1px solid black;
   border-radius: 20px;
-  margin-top: 10px;
   object-fit: cover;
 }
 
@@ -259,6 +311,36 @@ a:active {
 }
 
 .delete-btn {
-  padding: 10px;
+  padding: 12px;
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+  font-size: x-large;
+  /* border: 20px; */
+  border-radius: 20px;
+}
+
+.delete-btn:hover {
+  cursor: pointer;
+}
+
+.comment-deleted {
+  position: relative;
+  left: 200px;
   font-size: xx-large;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
+  animation-name: flash;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes flash {
+  0%, 49%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }

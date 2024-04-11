@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useContext, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { postArticleCommentById } from '../Api'

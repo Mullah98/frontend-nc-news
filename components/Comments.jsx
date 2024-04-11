@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import { fetchArticleCommentsById } from "../Api"
 import { useParams } from 'react-router-dom'
 import CommentsCard from "./CommentsCard"
-import CommentAdder from "./CommentAdder"
 
 export default function Comments () {
     const [singleComment, setSingleComment] = useState({})

@@ -38,12 +38,8 @@ export function postArticleCommentById(articles_id, postBody) {
 }
 
 export function deleteArticleCommentById(comment_id) {
-    return marketPlaceAPI.delete(`/articles/comments/${comment_id}`).then(res => {
-        console.log(res.data);
-        return res.data
-    })
+    return marketPlaceAPI.delete(`comments/${comment_id}`)
 }
-
 // export function fetchTopics(topic_name) {
 //     return marketPlaceAPI.get("/topics", {params: {topic_name}})
 // }
