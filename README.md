@@ -1,3 +1,5 @@
+A frontend project using the NC news backedn api. A social news collection and discussion website created using React and implementing CRUD functionality (Create, Read, Update, Delete).
+
 To run project, type 'npm run dev' in the terminal to run the website
 
 ## Link to deployed version
